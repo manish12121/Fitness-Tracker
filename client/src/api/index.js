@@ -3,6 +3,7 @@ import axios from "axios";
 const API = axios.create({
   baseURL: "https://fitness-tracker-45u3.onrender.com/api/",
 });
+
 export const UserSignUp = async (data) => API.post("/user/signup", data);
 export const UserSignIn = async (data) => API.post("/user/signin", data);
 
