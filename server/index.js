@@ -13,6 +13,7 @@ app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true }));
 
 
+
 app.get("/", async (req, res) => {
     res.status(200).json({ message:"Fitness Tracker Server is running" });
 });

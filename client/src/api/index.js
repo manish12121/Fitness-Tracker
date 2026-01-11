@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://fitness-tracker-45u3.onrender.com/api/",
+  baseURL: "http://localhost:8080/api/",
 });
 
 export const UserSignUp = async (data) => API.post("/user/signup", data);
@@ -21,3 +21,10 @@ export const addWorkout = async (token, data) =>
   await API.post(`/user/workout`, data, {
     headers: { Authorization: `Bearer ${token}` },
   });
+
+export const sendOtp = (email) =>
+  API.post("/user/send-otp", { email });
+
+export const signUp = (data) =>
+  API.post("/user/signup", data);
+
